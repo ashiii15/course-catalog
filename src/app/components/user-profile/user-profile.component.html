@@ -1,1 +1,8 @@
-<p>user-profile works!</p>
+<div class="user-profile">
+    <h2>My Courses</h2>
+    <div *ngFor="let course of enrolledCourses" class="course-card">
+      <h3>{{ course.title }}</h3>
+      <p>Progress: {{ course.progress }}%</p>
+    </div>
+  </div>
+  
