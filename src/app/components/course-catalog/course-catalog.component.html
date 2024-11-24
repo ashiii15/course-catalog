@@ -1,1 +1,27 @@
-<p>course-catalog works!</p>
+<div class="course-catalog">
+    <input
+      type="text"
+      placeholder="Search courses..."
+      [(ngModel)]="searchTerm"
+      (input)="onSearch()"
+    />
+  
+    <select [(ngModel)]="filter" (change)="onFilterChange()">
+      <option value="">Sort By</option>
+      <option value="price">Price</option>
+      <option value="rating">Rating</option>
+      <option value="category">Category</option>
+    </select>
+  
+    <div *ngFor="let course of filteredCourses" class="course-card">
+      <img [src]="course.imageUrl" alt="{{ course.title }}" />
+      <h3>{{ course.title }}</h3>
+      <p>{{ course.description }}</p>
+      <p><strong>Instructor:</strong> {{ course.instructor }}</p>
+      <p><strong>Rating:</strong> {{ course.rating }}</p>
+      <p><strong>Price:</strong> ${{ course.price }}</p>
+      <button (click)="enroll(course.id)">Enroll</button>
+      <button (click)="unenroll(course.id)">Unenroll</button>
+    </div>
+  </div>
+  
