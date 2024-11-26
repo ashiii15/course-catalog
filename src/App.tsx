@@ -20,7 +20,7 @@ const App: React.FC = () => {
   useEffect(() => {
     const fetchCourses = async () => {
       try {
-        const response = await fetch("http://localhost:27017/courses");
+        const response = await fetch("http://localhost:5000/courses");
         if (!response.ok) {
           throw new Error(`Error: ${response.statusText}`);
         }
