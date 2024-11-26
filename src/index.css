@@ -1,13 +1,289 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+.course-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1rem;
+  padding: 1rem;
+  margin-top: 2rem;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.course-card {
+  background: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.course-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.course-image {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+}
+
+.course-details {
+  padding: 1rem;
+}
+
+.course-title {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.course-description {
+  font-size: 0.9rem;
+  color: #555;
+  margin-bottom: 0.5rem;
+}
+
+.course-instructor,
+.course-rating,
+.course-price {
+  font-size: 0.8rem;
+  margin: 0.3rem 0;
+}
+
+.course-button {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  font-size: 0.9rem;
+  color: #fff;
+  background-color: #007bff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.course-button:hover {
+  background-color: #0056b3;
+}
+
+.course-button.unenroll {
+  background-color: #dc3545;
+}
+
+.course-button.unenroll:hover {
+  background-color: #a71d2a;
+}
+/* user profile */
+.user-profile {
+  padding: 1rem;
+}
+
+.user-profile h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 1.5rem;
+  color: #333;
+}
+
+.enrolled-course-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1rem;
+}
+
+.enrolled-course-card {
+  background: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.enrolled-course-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.enrolled-course-image {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+}
+
+.enrolled-course-details {
+  padding: 1rem;
+}
+
+.enrolled-course-title {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.enrolled-course-instructor,
+.enrolled-course-progress {
+  font-size: 0.9rem;
+  color: #555;
+  margin: 0.5rem 0;
+}
+
+.enrolled-course-unenroll-button {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  font-size: 0.9rem;
+  color: #fff;
+  background-color: #dc3545;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.enrolled-course-unenroll-button:hover {
+  background-color: #a71d2a;
+}
+
+/* header */
+.header {
+  background-color: #f8f9fa;
+  padding: 1rem 2rem;
+  border-bottom: 1px solid #ddd;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: 1rem;
+}
+
+.search-input {
+  flex: 1;
+  padding: 0.75rem 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+.search-input:focus {
+  border-color: #007bff;
+}
+
+.search-button {
+  padding: 0.75rem 1.5rem;
+  background-color: #007bff;
+  color: #fff;
+  font-size: 1rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.search-button:hover {
+  background-color: #0056b3;
+  transform: scale(1.05);
+}
+
+.filter-dropdown {
+  padding: 0.75rem 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+  outline: none;
+  background-color: #fff;
+  cursor: pointer;
+  transition: border-color 0.3s ease;
+}
+
+.filter-dropdown:focus {
+  border-color: #007bff;
+}
+
+@media (max-width: 768px) {
+  .header-container {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.5rem;
+  }
+
+  .search-button,
+  .filter-dropdown {
+    width: 100%;
+  }
+}
+
+/* Fixed Header Styles */
+.header {
+  position: fixed; /* Make the header fixed */
+  top: 0; /* Align it to the top */
+  left: 0;
+  width: 100%; /* Full width */
+  background-color: #333; /* Background color for the header */
+  color: white; /* Text color */
+  padding: 1rem 2rem; /* Padding inside the header */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add a subtle shadow for depth */
+  z-index: 1000; /* Ensure it stays above other elements */
+}
+
+/* Container for header content */
+.header-container {
+  display: flex;
+  justify-content: space-between; /* Space out the elements */
+  align-items: center; /* Vertically align items */
+  max-width: 1200px;
+  margin: 0 auto; /* Center the content horizontally */
+}
+
+/* Search input styles */
+.search-input {
+  padding: 0.5rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 4px;
+  margin-right: 1rem; /* Space between input and button */
+  cursor: pointer;
+}
+.search-input:hover {
+  cursor: text; /* explicitly set the cursor to text on hover */
+}
+
+/* Search button styles */
+.search-button {
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  background-color: #ffdd57; /* Highlight color */
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.search-button:hover {
+  background-color: #ffc107; /* Slightly darker on hover */
+}
+
+/* Filter dropdown styles */
+.filter-dropdown {
+  padding: 0.5rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 4px;
+}
+
+/* Adjust the body padding to prevent overlap with fixed header */
+body {
+  margin: 0; /* Remove default body margin */
+  padding-top: 80px; /* Add padding equal to header height */
+}
+
+/* logo */
+.logo img {
+  width: 120px; /* Adjust logo size */
+  height: auto;
 }

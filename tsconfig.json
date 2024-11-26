@@ -1,0 +1,17 @@
+{
+    "compilerOptions": {
+      "target": "ES5",                        // Transpile to ES5 for compatibility
+      "lib": ["dom", "es2015"],               // Include libraries for DOM and modern JavaScript
+      "allowJs": true,                        // Allow JavaScript files to be compiled
+      "jsx": "react-jsx",                     // Enable JSX support for React 17 and above
+      "module": "commonjs",                   // CommonJS module system
+      "moduleResolution": "node",             // Resolve modules in a Node-style
+      "strict": true,                         // Enable strict type-checking options
+      "esModuleInterop": true,                // Enable ES module interoperability
+      "skipLibCheck": true                    // Skip type checking of declaration files for faster compilation
+    },
+    "include": [
+      "src/**/*"                              // Include all files under src directory
+    ]
+  }
+  

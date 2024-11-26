@@ -1,10 +1,8 @@
-import { Course } from "./Course";
-
 export interface User {
-    id: string;
+    id: Number;
     name: string;
     email: string;
-    enrolledCourses: Course[];
-    progress: Record<string, number>; // courseId -> progress percentage
+    enrolledCourses: number[]
+    progress: Record<string, number>; 
   }
   
